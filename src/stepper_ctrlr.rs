@@ -10,7 +10,7 @@ use log::{info, warn, error};
 
 extern crate rppal; 
 use rppal::gpio::{Gpio, OutputPin};
-use std::;
+use std;
 
 
 const SLEEP : f64 = 0.005;//in seconds, 5ms
@@ -65,13 +65,13 @@ impl ControllerThread {
         
                 //init gpio interface
                 let gpio = Gpio::new().expect("Failed to access GPIO");
-        
+                
                 //init pins
-                let pul = gpio.get(controller::).expect("Failed to access PUL pin").into_output();
-                let dir = gpio.get(DIR_PIN).expect("Failed to access DIR pin").into_output();
+                let pul = gpio.get(17).expect("Failed to access PUL pin").into_output();
+                let dir = gpio.get(18).expect("Failed to access DIR pin").into_output();
         
                 //set initial dirrection
-                dir_pin.write(if dir == 0 { rppal::gpio::Level::Low } else { rppal::gpio::Level::High });
+                dir_pin.write(if dirrection == 0 { rppal::gpio::Level::Low } else { rppal::gpio::Level::High });
         
                 //setup timing
                 let interval = Duration::from_secs_f64(SLEEP);

@@ -5,3 +5,4 @@ edition = "2021"
 
 [dependencies]
 rppal = "0.12"  # might need to adjust the version
+simple_logger = "4.2"

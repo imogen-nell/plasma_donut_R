@@ -1,9 +1,11 @@
 use std::time::Duration;
 use simple_logger::SimpleLogger;
 
-use plasma_donut::controller::ControllerThread;
+mod stepper_ctrlr;
 
-use plasma_donut::cmd;
+use stepper_ctrlr::ControllerThread;
+
+use PLASMA_DONUT_R::cmd;
 
 const DIR : i32  = 18;
 const PUL : i32  = 17;
