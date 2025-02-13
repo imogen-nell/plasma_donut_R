@@ -1,0 +1,7 @@
+[package]
+name = "plasma_donut_R"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+rppal = "0.12"  # might need to adjust the version
